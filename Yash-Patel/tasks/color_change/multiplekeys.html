@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Key Capture Example</title>
+  <style>
+    #output {
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Press multiple keys</h2>
+  <span id="output">Key events will be displayed here</span><br><br>
+  <span id="code">Key codes will be displayed here</span>
+
+  <script>
+    // Store pressed keys in an object or Set
+    const pressedKeys = new Set();
+    const keycodes = new Set();
+    // Capture keydown event
+    document.addEventListener('keydown', (event) => {
+      event.preventDefault();
+      // Add the key to the pressed keys set
+      pressedKeys.add(event.key);
+      keycodes.add(event.code)
+      updateOutput();
+    });
+
+    // Capture keyup event
+    document.addEventListener('keyup', (event) => {
+      event.preventDefault();
+      //  Remove the key from the pressed keys set
+      pressedKeys.delete(event.key);
+      keycodes.delete(event.code);
+      //pressedKeys.clear();
+      //keycodes.clear();
+
+      updateOutput();
+    });
+
+    // Update the output display
+    function updateOutput() {
+      const output = document.getElementById('output');
+      const codes = document.getElementById('code');
+      if (pressedKeys.size === 0) {
+        output.textContent = "No keys are pressed.";
+      } else {
+        output.textContent = "Pressed keys: " + Array.from(pressedKeys).join(", ");
+      }
+
+      if (keycodes.size === 0) {
+        codes.textContent = "No code.";
+      } else {
+        codes.textContent = "Key Code: " + Array.from(keycodes).join(", ");
+      }
+
+    }
+  </script>
+</body>
+
+</html>

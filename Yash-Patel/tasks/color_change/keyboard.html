@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+
+<body>
+
+    <h1>Keyboard Events :</h1><br>
+    <div id="output">
+        <div>Key : <span id="key"></span></div>
+        <div>KeyCode : <span id="keycode"></span></div>
+        <div>Code : <span id="code"></span></div>
+    </div>
+    <script>
+        let key = document.getElementById("key");
+        let keycode = document.getElementById("keycode");
+        let code = document.getElementById("code");
+
+        let keypressed = (Event) => {
+            key.innerHTML = `${event.key === " " ? "Space" : event.key}`;
+            keycode.innerHTML = `${event.keyCode}`;
+            code.innerHTML = `${event.code}`;
+
+        };
+
+        window.addEventListener("keydown", keypressed);
+
+    </script>
+
+</body>
+
+</html>

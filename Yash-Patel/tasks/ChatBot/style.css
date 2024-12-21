@@ -1,0 +1,248 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.open-chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#userInput {
+  flex: 1; /* Ensure it takes up remaining space */
+  font-size: 12px; /* Reduced font size */
+  padding: 6px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Slightly smaller corners */
+  margin-right: 5px; /* Small space between input and button */
+}
+
+#sendButton {
+  font-size: 12px; /* Reduced font size */
+  padding: 6px 10px; /* Reduced padding for a smaller button */
+  border: none;
+  background-color: #007bff; /* Keep the primary color */
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#sendButton:hover {
+  background-color: #0056b3; /* Slightly darker blue on hover */
+}
+
+#keyboardContainer {
+  display: flex;
+  align-items: center;
+  padding: 5px; /* Reduced padding for a smaller appearance */
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9; /* Light background color for the input area */
+}
+
+#keywordButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 5px;
+}
+
+.keyword-btn {
+  font-size: 11px; /* Smaller font size for keyword buttons */
+  padding: 5px 8px; /* Reduced padding for keyword buttons */
+  border-radius: 4px;
+}
+
+.open-chat-btn:hover {
+  background-color: #0056b3;
+}
+
+.chatbot-popup {
+  position: fixed;
+  bottom: -400px;
+  right: 20px;
+  width: 350px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  animation: slideIn 0.4s ease forwards;
+}
+#chatPopup {
+  position: fixed;
+  bottom: 15px; /* Reduced spacing from the bottom */
+  right: 15px;  /* Reduced spacing from the right */
+  width: 250px; /* Reduced width of the chat popup */
+  max-height: 400px; /* Reduced maximum height */
+  display: none;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Slightly smaller border radius */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.chatbot-popup.close {
+  animation: slideOut 0.4s ease forwards;
+}
+
+.chat-header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+.close-chat-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#chatWindow {
+  height: 200px; /* Reduced height for the chat content area */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 8px; /* Slightly smaller padding */
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: 12px; /* Smaller font size for messages */
+}
+
+#chatWindow::-webkit-scrollbar {
+  width: 6px; /* Smaller scrollbar width */
+}
+
+#chatWindow::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 3px;
+}
+
+#chatWindow::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+
+
+.message {
+  margin: 5px 0;
+}
+
+.user-message {
+  text-align: right;
+  color: #333;
+}
+
+.bot-message {
+  text-align: left;
+  color: #007bff;
+}
+
+.chat-input {
+  display: flex;
+  padding: 7px;
+  background-color: #f9f9f9;
+  flex-direction: column;
+}
+
+.chat-input input {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.chat-input button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+}
+
+.keyword-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.keyword-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.keyword-btn:hover {
+  background-color: #0056b3;
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -400px;
+    opacity: 0;
+  }
+  to {
+    bottom: 80px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    bottom: 80px;
+    opacity: 1;
+  }
+  to {
+    bottom: -400px;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chatbot-popup {
+    bottom: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  .chat-input input {
+    width: 80%;
+  }
+
+  .chat-input button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse Event</title>
+</head>
+
+<body>
+    <h1>Mouse Events :</h1><br>
+    <div>Event Triggered : <span id="output"></span></div>
+    <script>
+        let output = document.getElementById("output");
+
+        let mouseevent = (event) => {
+            //event.preventDefault();
+            output.innerHTML = event.button === 0 ? "Left" : event.button === 1 ? "Middle" : "Right";
+        };
+
+        window.addEventListener("mousedown", mouseevent);
+
+    </script>
+</body>
+
+</html>

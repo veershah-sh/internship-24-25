@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+</head>
+
+<body>
+    <form onsubmit="verifyLogin(event)">
+        <h3>Login</h3>
+        <table>
+            <tr>
+                <td>
+                    <label>Email:</label>
+                    <input type="text" id="email" placeholder="Enter your Email" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your Password" required />
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Login</button>
+        <label id="message"></label>
+        <a href="sign-up.html">SignUp!</a>
+        <hr />
+        <h4>OR</h4>
+        <div id="googleSignInButton"></div>
+    </form>
+
+    <!-- Google Sign-In Script -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
