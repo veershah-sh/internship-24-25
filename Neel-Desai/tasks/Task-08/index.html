@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup Chatbot</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Welcome to Chatbot</h1>
+    <button class="open-chat-btn" id="openChat">Chat</button>
+    <div class="chatbot-popup" id="chatPopup">
+      <div class="chat-header">
+        Chatbot
+        <button class="close-chat-btn" id="closeChat">×</button>
+      </div>
+      <div class="chat-window" id="chatWindow"></div>
+      <div class="keyword-buttons" id="keywordButtons">
+        <button class="keyword-btn" data-keyword="hello">Hello</button>
+        <button class="keyword-btn" data-keyword="howareyou">
+          How are you?
+        </button>
+        <button class="keyword-btn" data-keyword="bye">Goodbye</button>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button id="sendButton">Send</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

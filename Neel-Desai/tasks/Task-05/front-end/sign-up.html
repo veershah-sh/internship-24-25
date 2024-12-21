@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Signup Form</h3>
+      <form onsubmit="signup(event)">
+        <div class="form-group">
+          <input
+            type="text"
+            id="fname"
+            class="input-field"
+            placeholder="Enter First Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="lname"
+            class="input-field"
+            placeholder="Enter Last Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            class="input-field"
+            placeholder="Enter Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            id="password"
+            class="input-field"
+            placeholder="Enter Password"
+            required
+          />
+        </div>
+        <div>
+          <button type="submit" class="btn">Sign Up</button>
+        </div>
+      </form>
+      <br />
+      <div>
+        <label id="message"></label>
+      </div>
+      <div class="form-group">
+        <button
+          type="button"
+          class="btn"
+          onclick="window.location.href='index.html'"
+        >
+          Sign In
+        </button>
+      </div>
+    </div>
+    <script src="../back-end/myapp.js" defer></script>
+  </body>
+</html>
