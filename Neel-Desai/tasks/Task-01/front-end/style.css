@@ -1,0 +1,17 @@
+h3{
+    color:blue;
+    font-size: 24px;
+}
+.button {
+    transition-duration: 0.4s;
+  }
+.button:hover {
+    background-color: #04AA6D; 
+    color: white;
+  }
+  h1{
+    color: #04AA6D;
+  }
+a{
+    text-align: center;
+  }

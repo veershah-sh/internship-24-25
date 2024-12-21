@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP</title>
+</head>
+<body>
+    <h3>Signup Form</h3>
+    <div>
+        <form onsubmit="signup(event)">
+            <div>
+                <input type="text" id="fname" placeholder="Enter First Name" required>
+            </div>
+            <div>
+                <input type="text" id="lname" placeholder="Enter Last Name" required>
+            </div>
+            <div>
+                <input type="email" id="email" placeholder="Enter Email" required>
+            </div>
+            <div>
+                <input type="password" id="password" placeholder="Enter Password" required>
+            </div>
+            <div>
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div><br>
+    <div>
+        <label id="message"></label>
+    </div>
+    <div>
+        <a href="index.html">Login!</a>
+    </div>
+    <script src="../back-end/myapp.js" defer></script>
+
+</body>
+</html>
