@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Profile Search</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="script.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-container">
+        <h1>Github Scout</h1>
+        <input
+          type="text"
+          id="txtSearch"
+          placeholder="Enter Github Profile..."
+          required
+        />
+        <button id="btnSearch" onclick="fetchUser()">Search</button>
+      </div>
+      <div id="profileDiv" class="profile hidden">
+        <img id="avatar" src="" alt="Avatar" class="avatar" />
+        <div class="profile-info">
+          <div><strong>Name:</strong> <span id="name">Not Available</span></div>
+          <div><strong>Bio:</strong> <span id="bio">Not Available</span></div>
+          <div>
+            <strong>Company:</strong> <span id="company">Not Available</span>
+          </div>
+          <div>
+            <strong>Location:</strong> <span id="location">Not Available</span>
+          </div>
+          <div>
+            <strong>Email:</strong> <span id="email">Not Available</span>
+          </div>
+          <div><strong>Public Repos:</strong> <span id="repos">0</span></div>
+          <div><strong>Followers:</strong> <span id="followers">0</span></div>
+          <div><strong>Following:</strong> <span id="following">0</span></div>
+          <div>
+            <strong>Account Created:</strong>
+            <span id="created">Not Available</span>
+          </div>
+          <div>
+            <strong>Last Updated:</strong>
+            <span id="updated">Not Available</span>
+          </div>
+        </div>
+
+        <div class="details-section">
+          <button id="viewFollowersBtn" onclick="viewFollowers()">
+            View Followers
+          </button>
+          <button id="viewFollowingBtn" onclick="viewFollowing()">
+            View Following
+          </button>
+          <button id="viewReposBtn" onclick="viewRepos()">
+            View Repositories
+          </button>
+        </div>
+
+        <div id="detailsDiv" class="details hidden"></div>
+      </div>
+
+      <p id="errorP" class="hidden"></p>
+    </div>
+  </body>
+</html>
