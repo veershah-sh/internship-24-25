@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upcoming IPOs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      th {
+        background-color: #f2f2f2;
+        text-align: left;
+      }
+      td {
+        text-align: left;
+      }
+      .ipo-container {
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ipo-container">
+      <h2>Upcoming IPOs</h2>
+      <table id="ipo-table">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>SME</th>
+            <th>Additional Info</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script>
+      const xhr = new XMLHttpRequest();
+      xhr.withCredentials = true;
+
+      xhr.addEventListener("readystatechange", function () {
+        if (xhr.readyState === xhr.DONE) {
+          try {
+            const response = JSON.parse(xhr.responseText);
+            console.log(response);
+            if (Array.isArray(response.upcoming)) {
+              displayIpoData(response.upcoming);
+            } else {
+              console.error(
+                "Upcoming IPO data is not an array:",
+                response.upcoming
+              );
+            }
+          } catch (error) {
+            console.error("Error parsing the response:", error);
+          }
+        }
+      });
+
+      xhr.open("GET", "https://indian-stock-exchange-api2.p.rapidapi.com/ipo");
+      xhr.setRequestHeader(
+        "x-rapidapi-key",
+        "801e626791mshaf5ebaaa8108eaap1c48c5jsn286d80f4fd52"
+      );
+      xhr.setRequestHeader(
+        "x-rapidapi-host",
+        "indian-stock-exchange-api2.p.rapidapi.com"
+      );
+
+      xhr.send();
+      function displayIpoData(ipoData) {
+        const tableBody = document.querySelector("#ipo-table tbody");
+
+        ipoData.forEach((ipo) => {
+          const row = document.createElement("tr");
+
+          row.innerHTML = `
+            <td>${ipo.symbol}</td>
+            <td>${ipo.name}</td>
+            <td>${ipo.status}</td>
+            <td>${ipo.is_sme ? "Yes" : "No"}</td>
+            <td>${ipo.additional_text}</td>
+            `;
+
+          tableBody.appendChild(row);
+        });
+      }
+    </script>
+  </body>
+</html>
