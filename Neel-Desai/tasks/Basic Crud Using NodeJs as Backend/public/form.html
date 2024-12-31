@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer Registration Form</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      .action-buttons button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Farmer Registration Form</h1>
+    <form id="farmer-form">
+      <div>
+        <label for="farmer_name">Farmer Name:</label>
+        <input type="text" id="farmer_name" name="farmer_name" required />
+      </div>
+      <div>
+        <label for="farmer_email">Email:</label>
+        <input type="email" id="farmer_email" name="farmer_email" required />
+      </div>
+      <div>
+        <label for="farmer_phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="farmer_phone"
+          name="farmer_phone"
+          pattern="[0-9]{10}"
+          placeholder="1234567890"
+          required
+        />
+      </div>
+      <div>
+        <label for="survey_number">Survey Number:</label>
+        <input type="text" id="survey_number" name="survey_number" required />
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <h2 style="text-align: center">Submitted Farmers' Data</h2>
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Farmer Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Survey Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

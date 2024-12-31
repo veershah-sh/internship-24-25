@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Role-Based Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="role-select">Role:</label>
+      <select id="role-select" name="role">
+        <option value="farmer">Farmer</option>
+        <option value="operator">Operator</option>
+      </select>
+    </form>
+
+    <!-- Farmer Form -->
+    <form id="farmer-form" class="role-form" style="display: none">
+      <h3>Farmer Form</h3>
+      <div>
+        <label for="farmer_name">Farmer Name:</label>
+        <input type="text" id="farmer_name" name="name" required />
+      </div>
+      <div>
+        <label for="farmer_email">Email:</label>
+        <input type="email" id="farmer_email" name="email" required />
+      </div>
+      <div>
+        <label for="farmer_phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="farmer_phone"
+          name="phone"
+          pattern="[0-9]{10}"
+          placeholder="1234567890"
+          required
+        />
+      </div>
+      <div>
+        <label for="farmer_survey_number">Survey Number:</label>
+        <input
+          type="text"
+          id="farmer_survey_number"
+          name="survey_number"
+          required
+        />
+      </div>
+      <div>
+        <button type="submit" id="farmer-submit">Submit</button>
+      </div>
+    </form>
+
+    <!-- Operator Form -->
+    <form id="operator-form" class="role-form" style="display: none">
+      <h3>Operator Form</h3>
+      <div>
+        <label for="operator_name">Operator Name:</label>
+        <input type="text" id="operator_name" name="name" required />
+      </div>
+      <div>
+        <label for="operator_email">Email:</label>
+        <input type="email" id="operator_email" name="email" required />
+      </div>
+      <div>
+        <label for="operator_phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="operator_phone"
+          name="phone"
+          pattern="[0-9]{10}"
+          placeholder="1234567890"
+          required
+        />
+      </div>
+      <div>
+        <label for="operator_survey_number">Survey Number:</label>
+        <input
+          type="text"
+          id="operator_survey_number"
+          name="survey_number"
+          required
+        />
+      </div>
+      <div>
+        <button type="submit" id="operator-submit">Submit</button>
+      </div>
+    </form>
+
+    <h2 style="text-align: center">Submitted Data</h2>
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Survey Number</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
